@@ -69,6 +69,6 @@ Note : Copy this file to credentials.example. json to credentials.json(use this 
 
 Usage:
 
-gmail-cleanup
+pip install gmail-cleanup
 
 Notes: Test user, Gmail API enablement, token file location.
