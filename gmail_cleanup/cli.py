@@ -78,6 +78,16 @@
 # if __name__ == '__main__':
 #     main()
 
+import warnings
+warnings.simplefilter("ignore")  # This silences all warnings, strongest option
+
+# OR (preferable, just for this warning type)
+try:
+    from urllib3.exceptions import NotOpenSSLWarning
+    warnings.filterwarnings("ignore", category=NotOpenSSLWarning)
+except ImportError:
+    pass  # Fallback if urllib3 isn't present yet
+
 import os
 import pickle
 import time
@@ -88,7 +98,7 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 
 SCOPES = ['https://www.googleapis.com/auth/gmail.modify']
-CREDENTIALS_FILE = 'credentials.json'
+CREDENTIALS_FILE = '../credentials.json'
 TOKEN_FILE = 'token.pickle'
 QUERY = 'is:unread'
 MAX_RESULTS = 500
@@ -145,3 +155,5 @@ def cli_main():
             break
 
     print(f"\nFINISHED: {total_deleted} unread threads moved to Trash.")
+if __name__ == '__main__':
+    cli_main()

@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="gmail-cleanup",
-    version="0.1.0",
+    version="0.1.1",
     author="Your Name",
     description="Delete all unread Gmail threads via API",
     packages=find_packages(),
