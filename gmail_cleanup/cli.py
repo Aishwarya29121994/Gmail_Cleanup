@@ -98,7 +98,7 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 
 SCOPES = ['https://www.googleapis.com/auth/gmail.modify']
-CREDENTIALS_FILE = '../credentials.json'
+CREDENTIALS_FILE = 'credentials.json'
 TOKEN_FILE = 'token.pickle'
 QUERY = 'is:unread'
 MAX_RESULTS = 500
